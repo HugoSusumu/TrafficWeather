@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+    - name: weather_events
+      database: US_WEATHER_AND_TRAFFIC_EVENTS
+      schema: weather
+      tables:
+        - name: US_WEATHER_EVENTS_RAW
+          description: Raw weather events data in United States
+          columns:
+            - name: eventid
+              tests:
+                - unique
+                - not_null
+            - name: timezone
+              tests:
+                - not_null
+            - name: type
+              tests:
+                - not_null
+
+    - name: traffic_events
+      database: US_WEATHER_AND_TRAFFIC_EVENTS
+      schema: traffic
+      tables:
+        - name: US_TRAFFIC_EVENTS_RAW
+          description: Raw weather events data in United States
+          columns:
+            - name: eventid
+              tests:
+                - unique
+                - not_null
+            - name: severity
+              tests:
+                - not_null
+            - name: type
+              tests:
+                - not_null
