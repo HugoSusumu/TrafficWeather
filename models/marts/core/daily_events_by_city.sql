@@ -12,7 +12,7 @@ final as(
 select 
     daily_traffic_events.city as city,
     daily_traffic_events.traffic_events,
-    coalesce(daily_weather_events.weather_events, 0),
+    coalesce(daily_weather_events.weather_events, 0) as weather_events,
     daily_traffic_events.day
     from daily_traffic_events
     left join daily_weather_events 
