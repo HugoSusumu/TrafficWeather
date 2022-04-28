@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_daily_weather_events
+    description: Stage daily weather events data
+    columns: 
+      - name: day
+        tests:
+          - not_null
+
+  - name: stg_daily_traffic_events
+    description: Stage daily traffic events data
+    columns: 
+      - name: day
+        tests:
+          - not_null
+
