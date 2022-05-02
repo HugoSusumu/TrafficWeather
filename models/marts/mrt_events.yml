@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: daily_weather_events_by_city
+    description: Number of daily weather and traffic events data by day
