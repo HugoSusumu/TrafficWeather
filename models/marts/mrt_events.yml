@@ -1,5 +1,15 @@
 version: 2
 
 models:
-  - name: daily_weather_events_by_city
+  - name: daily_events_by_city
     description: Number of daily weather and traffic events data by day
+    columns: 
+      - name: traffic_events
+        tests:
+          - not_null
+      - name: weather_events
+        tests:
+          - not_null
+      - name: day
+        tests:
+          - not_null
