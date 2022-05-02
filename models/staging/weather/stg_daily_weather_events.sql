@@ -4,8 +4,8 @@ with daily_weather_events as (
         count(1)  weather_events,
         date_trunc('day', "StartTime(UTC)") as day
     from {{source ('weather_events', 'US_WEATHER_EVENTS_RAW')}}
-    group by 1, 3
-    order by 3, 1
+    group by city, day
+    order by day, city
 )
 
 select * from daily_weather_events
