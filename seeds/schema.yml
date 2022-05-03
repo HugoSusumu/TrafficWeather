@@ -1,7 +1,7 @@
 version: 2
 
 seeds:
-  - name: us_holiday_dates_2004_2021
+  - name: US_Holiday_Dates_2004_2021
     description: Holidays dates from 2004 to 2021
     columns: 
       - name: date

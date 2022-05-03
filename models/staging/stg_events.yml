@@ -12,7 +12,7 @@ models:
           - not_null
 
   - name: stg_daily_traffic_events_with_severity
-    description: Stage daily traffic events data
+    description: Stage daily traffic events data with severity
     columns: 
       - name: day
         tests:
@@ -22,7 +22,7 @@ models:
           - not_null
   
   - name: stg_daily_weather_events_with_severity
-    description: Stage daily traffic events data
+    description: Stage daily weather events data with severity
     columns: 
       - name: day
         tests:
