@@ -28,7 +28,7 @@ To get up and running with this project:
 
 3. Change into the `TrafficWeather` directory from the command line:
 ```bash
-$ cd jaffle_shop
+$ cd TrafficWeather
 ```
 
 4. Set up a profile called `Traffic_Weather_Events` to connect to a data warehouse by following [these instructions](https://docs.getdbt.com/docs/configure-your-profile). If you have access to a data warehouse, you can use those credentials – we recommend setting your [target schema](https://docs.getdbt.com/docs/configure-your-profile#section-populating-your-profile) to be a new schema (dbt will create the schema for you, as long as you have the right privileges). If you don't have access to an existing data warehouse, you can also setup a local postgres database and connect to it in your profile.
@@ -42,7 +42,7 @@ $ dbt debug
 ```bash
 $ dbt seed
 ```
-6.5. Set a database "US_WEATHER_AND_TRAFFIC_EVENTS" containing the tables especified in the file TrafficWeather/models/staging/src_events.yml then load the table "US_WEATHER_EVENTS_RAW" with s3://weathertrafficevents/WeatherEvents_Aug16_Dec20_Publish.csv.gz and the table "US_TRAFFIC_EVENTS_RAW" with s3://weathertrafficevents/TrafficEvents_Aug16_Dec20_Publish.csv.gz using your preferable data warehouse.
+6.5. Set a database "US_WEATHER_AND_TRAFFIC_EVENTS" containing the tables especified in the file TrafficWeather/models/staging/src_events.yml then load the table "US_WEATHER_EVENTS_RAW" with s3://weathertrafficevents/WeatherEvents_Aug16_Dec20_Publish.csv.gz and the table "US_TRAFFIC_EVENTS_RAW" with s3://weathertrafficevents/TrafficEvents_Aug16_Dec20_Publish.csv.gz using your preferable data warehouse and no credentials (Both username and password fields as blank).
 
 7. Run the models:
 ```bash
