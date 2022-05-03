@@ -3,7 +3,8 @@ with daily_weather_events as (
         city,
         count(1)  weather_events,
         date_trunc('day', "StartTime(UTC)") as day
-    from {{source ('weather_events', 'US_WEATHER_EVENTS_RAW')}}
+    rom {{source ('weather_events', 'US_WEATHER_EVENTS_RAW')}}
+    where city is not null
     group by city, day
     order by day, city
 )

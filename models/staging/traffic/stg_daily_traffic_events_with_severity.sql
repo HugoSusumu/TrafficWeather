@@ -8,7 +8,7 @@ with daily_traffic_events_with_severity as (
         count(case when severity = 3 then 1 else null end) as high_severity,
         count(case when severity = 4 then 1 else null end) as max_severity,
         date_trunc('day', "StartTime(UTC)") as day
-    from US_WEATHER_AND_TRAFFIC_EVENTS.TRAFFIC.US_TRAFFIC_EVENTS_RAW
+    from {{source ('traffic_events', 'US_TRAFFIC_EVENTS_RAW')}}
     where city is not null
     group by city, day
     order by day, city

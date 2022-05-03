@@ -16,11 +16,11 @@ select
     daily_traffic_events.medium_severity,
     daily_traffic_events.high_severity,
     daily_traffic_events.max_severity,
-    coalesce(daily_weather_events.weather_events, 0),
-    coalesce(daily_weather_events.light, 0),
-    coalesce(daily_weather_events.moderate, 0),
-    coalesce(daily_weather_events.severe, 0),
-    coalesce(daily_weather_events.heavy, 0),
+    coalesce(daily_weather_events.weather_events, 0) as weather_events,
+    coalesce(daily_weather_events.light, 0) as light_impact,
+    coalesce(daily_weather_events.moderate, 0) as moderate_impact,
+    coalesce(daily_weather_events.severe, 0) as severe_impact,
+    coalesce(daily_weather_events.heavy, 0) as heavy_impact,
     daily_traffic_events.day
     from daily_traffic_events
     left join daily_weather_events 
