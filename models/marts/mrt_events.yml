@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: daily_events_by_city
+    description: Number of daily weather and traffic events data by day
+    columns: 
+      - name: city
+        tests:
+          - not_null
+      - name: traffic_events
+        tests:
+          - not_null
+      - name: weather_events
+        tests:
+          - not_null
+        accepted_values:
+          - Cold
+          - Rain
+          - Fog
+          - Hail
+          - Snow
+          - Storm
+      - name: day
+        tests:
+          - not_null
+
+  - name: daily_events_by_city_with_severity
+    description: Number of daily weather and traffic events data by day with severity of events
+    columns: 
+      - name: city
+        tests:
+          - not_null
+      - name: traffic_events
+        tests:
+          - not_null
+      - name: weather_events
+        tests:
+        accepted_values:
+          - Cold
+          - Rain
+          - Fog
+          - Hail
+          - Snow
+          - Storm
+      - name: day
+        tests:
+          - not_null
+
+  - name: daily_events_by_city_with_holidays
+    description: Number of daily traffic events with holiday informations
+    columns: 
+      - name: city
+        tests:
+          - not_null
+      - name: traffic_events
+        tests:
+          - not_null
+      - name: day
+        tests:
+          - not_null
