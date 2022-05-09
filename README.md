@@ -15,7 +15,7 @@ What this repo _is not_:
 - A demonstration of using dbt for a high-complex project, or a demo of advanced features (e.g. macros, packages, hooks, operations) — we're just trying to keep things simple here!
 
 ### What's in this repo?
-This repo contains [seeds](https://docs.getdbt.com/docs/building-a-dbt-project/seeds) that includes some raw data from us holidays from 2014 to 2021.
+This repo contains [seeds](https://docs.getdbt.com/docs/building-a-dbt-project/seeds) that includes some raw data from US holidays from 2014 to 2021.
 
 The raw data used for the Weather and Traffic events can be found on the public AWS S3 bucket made available in this project.
 
