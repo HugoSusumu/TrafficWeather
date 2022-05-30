@@ -42,8 +42,8 @@ $ dbt debug
 ```bash
 $ dbt seed
 ```
-7. Set a database "US_WEATHER_AND_TRAFFIC_EVENTS" containing the a schema "TRAFFIC" and create a table with the definition
-"create or replace TABLE TRIGGO_EXAMPLES_DATABASE.TRAFFIC.US_TRAFFIC_EVENTS_RAW (
+7. Set a database "US_WEATHER_AND_TRAFFIC_EVENTS" containing the a schema "TRAFFIC" and create a table with the definition:
+<pre><code>"create or replace TABLE TRIGGO_EXAMPLES_DATABASE.TRAFFIC.US_TRAFFIC_EVENTS_RAW (
 	EVENTID VARCHAR(16777216) NOT NULL,
 	TYPE VARCHAR(16777216) NOT NULL,
 	SEVERITY NUMBER(38,0) NOT NULL,
@@ -64,7 +64,7 @@ $ dbt seed
 	STATE VARCHAR(16777216),
 	ZIPCODE NUMBER(38,0)
 )COMMENT='Raw data from us traffic events'
-;" 
+;"</code></pre>
 In the same database, create the schema "WEATHER" with the table definition:
 "create or replace TABLE TRIGGO_EXAMPLES_DATABASE.WEATHER.US_WEATHER_EVENTS_RAW (
 	EVENTID VARCHAR(16777216) NOT NULL,
