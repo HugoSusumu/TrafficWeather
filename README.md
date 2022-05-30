@@ -42,16 +42,56 @@ $ dbt debug
 ```bash
 $ dbt seed
 ```
-6.5. Set a database "US_WEATHER_AND_TRAFFIC_EVENTS" containing the tables especified in the file TrafficWeather/models/staging/src_events.yml then load the table "US_WEATHER_EVENTS_RAW" with s3://weathertrafficevents/WeatherEvents_Aug16_Dec20_Publish.csv.gz and the table "US_TRAFFIC_EVENTS_RAW" with s3://weathertrafficevents/TrafficEvents_Aug16_Dec20_Publish.csv.gz using your preferable data warehouse and no credentials (Both username and password fields as blank).
+7. Set a database "US_WEATHER_AND_TRAFFIC_EVENTS" containing the a schema "TRAFFIC" and create a table with the definition
+"create or replace TABLE TRIGGO_EXAMPLES_DATABASE.TRAFFIC.US_TRAFFIC_EVENTS_RAW (
+	EVENTID VARCHAR(16777216) NOT NULL,
+	TYPE VARCHAR(16777216) NOT NULL,
+	SEVERITY NUMBER(38,0) NOT NULL,
+	TMC NUMBER(38,0) NOT NULL,
+	DESCRIPTION VARCHAR(16777216) NOT NULL,
+	"StartTime(UTC)" TIMESTAMP_NTZ(9) NOT NULL,
+	"EndTime(UTC)" TIMESTAMP_NTZ(9) NOT NULL,
+	TIMEZONE VARCHAR(16777216) NOT NULL,
+	LOCATIONLAT NUMBER(38,0),
+	LOCATIONLNG NUMBER(38,0),
+	"Distance(mi)" NUMBER(38,0),
+	AIRPORTCODE VARCHAR(16777216),
+	NUMBER NUMBER(38,0),
+	STREET VARCHAR(16777216),
+	SIDE VARCHAR(16777216),
+	CITY VARCHAR(16777216),
+	COUNTY VARCHAR(16777216),
+	STATE VARCHAR(16777216),
+	ZIPCODE NUMBER(38,0)
+)COMMENT='Raw data from us traffic events'
+;" 
+In the same database, create the schema "WEATHER" with the table definition:
+"create or replace TABLE TRIGGO_EXAMPLES_DATABASE.WEATHER.US_WEATHER_EVENTS_RAW (
+	EVENTID VARCHAR(16777216) NOT NULL,
+	TYPE VARCHAR(16777216) NOT NULL,
+	SEVERITY VARCHAR(16777216),
+	STARTTIME TIMESTAMP_NTZ(9) NOT NULL,
+	ENDTIME TIMESTAMP_NTZ(9) NOT NULL,
+	TIMEZONE VARCHAR(16777216) NOT NULL,
+	LOCATIONLAT NUMBER(38,0),
+	LOCATIONLNG NUMBER(38,0),
+	AIRPORTCODE VARCHAR(16777216),
+	CITY VARCHAR(16777216),
+	COUNTY VARCHAR(16777216),
+	STATE VARCHAR(16777216),
+	ZIPCODE NUMBER(38,0)
+)COMMENT='Raw data from US Weather Events'
+;"
+Then load the tables with s3://weathertrafficevents/TrafficEvents_Aug16_Dec20_Publish.csv.gz and s3://weathertrafficevents/WeatherEvents_Aug16_Dec20_Publish.csv.gz using your preferable data warehouse and no credentials (Both username and password fields as blank).
 
-7. Run the models:
+8. Run the models:
 ```bash
 $ dbt run
 ```
 
 > **NOTE:** If this steps fails, it might mean that you need to make small changes to the SQL in the models folder to adjust for the flavor of SQL of your target database.
 
-8. Test the output of the models:
+9. Test the output of the models:
 ```bash
 $ dbt test
 ```
