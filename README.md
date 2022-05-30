@@ -43,7 +43,7 @@ $ dbt debug
 $ dbt seed
 ```
 7. Set a database "US_WEATHER_AND_TRAFFIC_EVENTS" containing the a schema "TRAFFIC" and create a table with the definition:
-<pre><code>"create or replace TABLE TRIGGO_EXAMPLES_DATABASE.TRAFFIC.US_TRAFFIC_EVENTS_RAW (
+<pre><code>create or replace TABLE TRIGGO_EXAMPLES_DATABASE.TRAFFIC.US_TRAFFIC_EVENTS_RAW (
 	EVENTID VARCHAR(16777216) NOT NULL,
 	TYPE VARCHAR(16777216) NOT NULL,
 	SEVERITY NUMBER(38,0) NOT NULL,
@@ -64,9 +64,9 @@ $ dbt seed
 	STATE VARCHAR(16777216),
 	ZIPCODE NUMBER(38,0)
 )COMMENT='Raw data from us traffic events'
-;"</code></pre>
+;</code></pre>
 In the same database, create the schema "WEATHER" with the table definition:
-"create or replace TABLE TRIGGO_EXAMPLES_DATABASE.WEATHER.US_WEATHER_EVENTS_RAW (
+<pre><code>create or replace TABLE TRIGGO_EXAMPLES_DATABASE.WEATHER.US_WEATHER_EVENTS_RAW (
 	EVENTID VARCHAR(16777216) NOT NULL,
 	TYPE VARCHAR(16777216) NOT NULL,
 	SEVERITY VARCHAR(16777216),
@@ -81,8 +81,8 @@ In the same database, create the schema "WEATHER" with the table definition:
 	STATE VARCHAR(16777216),
 	ZIPCODE NUMBER(38,0)
 )COMMENT='Raw data from US Weather Events'
-;"
-Then load the tables with s3://weathertrafficevents/TrafficEvents_Aug16_Dec20_Publish.csv.gz and s3://weathertrafficevents/WeatherEvents_Aug16_Dec20_Publish.csv.gz using your preferable data warehouse and no credentials (Both username and password fields as blank).
+;</code></pre>
+Then load the tables respectively with s3://weathertrafficevents/TrafficEvents_Aug16_Dec20_Publish.csv.gz and s3://weathertrafficevents/WeatherEvents_Aug16_Dec20_Publish.csv.gz using your preferable data warehouse and no credentials (Both username and password fields as blank).
 
 8. Run the models:
 ```bash
