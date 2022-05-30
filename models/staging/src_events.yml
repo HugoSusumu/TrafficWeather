@@ -2,7 +2,7 @@ version: 2
 
 sources:
     - name: weather_events
-      database: US_WEATHER_AND_TRAFFIC_EVENTS
+      database: TRIGGO_EXAMPLES_DATABASE
       schema: weather
       tables:
         - name: US_WEATHER_EVENTS_RAW
@@ -20,7 +20,7 @@ sources:
                 - not_null
 
     - name: traffic_events
-      database: US_WEATHER_AND_TRAFFIC_EVENTS
+      database: TRIGGO_EXAMPLES_DATABASE
       schema: traffic
       tables:
         - name: US_TRAFFIC_EVENTS_RAW
