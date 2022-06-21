@@ -42,7 +42,7 @@ $ dbt debug
 ```bash
 $ dbt seed
 ```
-7. Create a connection with a Snowflake account and set a database "US_WEATHER_AND_TRAFFIC_EVENTS" containing the a schema "TRAFFIC" and create a table with the definition:
+7. Create a connection with a Snowflake account and set a database "TRIGGO_EXAMPLES_DATABASE" containing the a schema "TRAFFIC" and create a table with the definition:
 <pre><code>create or replace US_WEATHER_AND_TRAFFIC_EVENTS.TRAFFIC.US_TRAFFIC_EVENTS_RAW (
 	EVENTID VARCHAR(16777216) NOT NULL,
 	TYPE VARCHAR(16777216) NOT NULL,
@@ -82,7 +82,7 @@ In the same database, create the schema "WEATHER" with the table definition:
 	ZIPCODE NUMBER(38,0)
 )COMMENT='Raw data from US Weather Events'
 ;</code></pre>
-Then load the tables respectively with s3://weathertrafficevents/TrafficEvents_Aug16_Dec20_Publish.csv.gz and s3://weathertrafficevents/WeatherEvents_Aug16_Dec20_Publish.csv.gz using your preferable data warehouse and no credentials (Both username and password fields as blank).
+Then load the tables respectively with s3://weathertrafficevents/TrafficEvents_Aug16_Dec20_Publish.csv.gz and s3://weathertrafficevents/WeatherEvents_Aug16_Dec20_Publish.csv.gz using your preferable data warehouse and no credentials (Both username and password fields empty).
 
 8. Run the models:
 ```bash
