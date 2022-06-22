@@ -1,3 +1,8 @@
+{{
+    config(
+      re_data_monitored=true
+    )
+}}
 with daily_weather_events as (
     select
         city,

@@ -1,3 +1,8 @@
+{{
+    config(
+      re_data_monitored=true
+    )
+}}
 with daily_traffic_events_with_severity as (
     select
         city,

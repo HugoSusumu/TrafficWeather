@@ -37,3 +37,6 @@ models:
         +materialized: table
     staging:
       +materialized: view
+
+vars:
+  re_data:save_test_history: true

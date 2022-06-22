@@ -1,3 +1,9 @@
+{{
+    config(
+      re_data_monitored=true
+    )
+}}
+
 with daily_traffic_events as (
     select * from {{ref('stg_daily_traffic_events')}}
 ),

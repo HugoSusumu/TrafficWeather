@@ -1,3 +1,8 @@
+{{
+    config(
+      re_data_monitored=true
+    )
+}}
 -- select cities with number of daily traffic and weather events
 
 with daily_traffic_events as (

@@ -1,3 +1,8 @@
+{{
+    config(
+      re_data_monitored=true
+    )
+}}
 with total_traffic_events_by_state as (
     select * from {{ref('stg_total_traffic_events_by_state')}}
 ),
