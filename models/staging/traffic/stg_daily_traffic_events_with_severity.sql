@@ -1,6 +1,7 @@
 {{
     config(
-      re_data_monitored=true
+      re_data_monitored=true,
+      re_data_time_filter='day'
     )
 }}
 with daily_traffic_events_with_severity as (

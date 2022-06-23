@@ -1,6 +1,7 @@
 {{
     config(
-      re_data_monitored=true
+      re_data_monitored=true,
+      re_data_time_filter='day'
     )
 }}
 -- select cities with number of daily traffic and weather events
