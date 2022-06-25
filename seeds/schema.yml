@@ -28,3 +28,6 @@ seeds:
         description: Year part of the date
         tests:
           - not_null
+    config:
+      re_data_monitored: true
+      re_data_time_filter: date
