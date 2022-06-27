@@ -60,3 +60,7 @@ seeds:
     #       - not_null
     config:
       re_data_monitored: true
+  - name: DAYS_2018_2020
+    description: Cities with population and population density
+    config:
+      re_data_monitored: true

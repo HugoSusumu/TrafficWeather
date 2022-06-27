@@ -5,6 +5,9 @@ with big_cities as (
         order by traffic_events desc
         limit 200
 ),
+hours as (
+
+),
 days as(
     select days from 
 )
