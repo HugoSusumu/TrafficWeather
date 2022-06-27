@@ -136,5 +136,17 @@ models:
         test: 
           - not_negative
           - not_null
+  - name: stg_total_traffic_events_by_city
+    description: Stage total traffic events per city
+    columns: 
+      - name: city
+        description: The city in address record.
+        tests:
+          - not_null
+      - name: traffic_events
+        description: Total traffic events per state
+        test: 
+          - not_negative
+          - not_null
           
 
