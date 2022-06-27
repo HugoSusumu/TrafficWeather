@@ -23,6 +23,12 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+# seeds:
+#   Traffic_Weather_Events: # you must include the project name
+#     warehouse_locations:
+#       +column_types:
+#         zipcode: varchar(5)
+
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
