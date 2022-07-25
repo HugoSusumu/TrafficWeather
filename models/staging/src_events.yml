@@ -12,6 +12,25 @@ sources:
               tests:
                 - unique
                 - not_null
+            - name: type
+              tests:
+                - accepted_values:
+                    values: ['placed', 'shipped', 'completed', 'returned']
+            - name: severity
+              tests:
+                - not_null
+            - name: tmc
+              tests:
+                - not_null
+            - name: description
+              tests:
+                - not_null
+            - name: "StartTime(UTC)"
+              tests:
+                - not_null
+            - name: "eNDTime(UTC)"
+              tests:
+                - not_null
             - name: timezone
               tests:
                 - not_null
